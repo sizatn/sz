@@ -10,9 +10,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>sz-common</artifactId>
+	<artifactId>sz-commons</artifactId>
 
-	<name>sz-common</name>
+	<name>sz-commons</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
