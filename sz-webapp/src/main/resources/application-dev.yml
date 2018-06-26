@@ -1,0 +1,62 @@
+server: 
+  context-path: /sz_webapp
+  port: 8090
+
+spring: 
+  datasource:
+    primary: 
+      url: jdbc:mysql://192.168.43.132:3306/main_smmsdemo
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+      # 使用druid数据源
+      #type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 10
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 5
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+    secondary: 
+      url: jdbc:mysql://192.168.43.132:3306/target_smmsdemo
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+      # 使用druid数据源
+      #type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 10
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 5
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  http: 
+    encoding: 
+      charset: utf-8
+    jackson: 
+      date-format: yyyy-mm-dd hh:mm:ss 
+      timezone: asia/shanghai
+    resources: 
+      chain: 
+        enabled: true
+  cache: 
+    type: EHCACHE
+    ehcache: 
+      config: classpath:ehcache.xml
+    
+logging: 
+  config: classpath:logback-boot.xml
