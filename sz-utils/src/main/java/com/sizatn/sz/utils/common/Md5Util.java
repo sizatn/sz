@@ -27,5 +27,12 @@ public class Md5Util {
 		}
 		return str;
 	}
+	
+	public static void main(String[] args) {
+		String str = "123456";
+		String password = Md5Util.getMd5(Md5Util.getMd5(str));
+		System.out.println(password);
+		System.out.println(password.length());
+	}
 
 }

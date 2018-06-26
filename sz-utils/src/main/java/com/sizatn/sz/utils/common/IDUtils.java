@@ -3,10 +3,15 @@ package com.sizatn.sz.utils.common;
 import java.security.SecureRandom;
 import java.util.UUID;
 
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
+
 /**
  * 封装各种生成唯一性ID算法的工具类.
  * 
  */
+@Service
+@Lazy(false)
 public class IDUtils {
 
 	private static SecureRandom random = new SecureRandom();
