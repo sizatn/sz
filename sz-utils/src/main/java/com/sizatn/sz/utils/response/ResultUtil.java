@@ -22,12 +22,20 @@ public class ResultUtil {
 		return new ResponseResult(Constants.SUCCESS_CODE, message, data);
 	}
 
+	public static ResponseResult success(String message) {
+		return new ResponseResult(Constants.SUCCESS_CODE, message);
+	}
+
 	public static ResponseResult error() {
 		return new ResponseResult(Constants.ERROR_CODE, Constants.ERROR_MSG);
 	}
 
 	public static ResponseResult error(String message) {
 		return new ResponseResult(Constants.ERROR_CODE, message);
+	}
+
+	public static ResponseResult error(String code, String message) {
+		return new ResponseResult(code, message);
 	}
 
 }
