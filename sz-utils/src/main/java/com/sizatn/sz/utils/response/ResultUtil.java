@@ -21,6 +21,10 @@ public class ResultUtil {
 	public static ResponseResult success(Object data) {
 		return new ResponseResult(SUCCESS_CODE, SUCCESS_MSG, data);
 	}
+	
+	public static ResponseResult success(Object data, String message) {
+		return new ResponseResult(SUCCESS_CODE, message, data);
+	}
 
 	public static ResponseResult error() {
 		return new ResponseResult(ERROR_CODE, ERROR_MSG);
