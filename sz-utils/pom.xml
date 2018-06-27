@@ -19,8 +19,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jwt.version>3.4.0</jwt.version>
-		<collections4.version>4.1</collections4.version>
+		<shiro.version>1.4.0</shiro.version>
 		<guava.version>24.1-jre</guava.version>
+		<collections4.version>4.1</collections4.version>
 		<commons.io.version>2.6</commons.io.version>
 		<zxing.core.version>3.3.0</zxing.core.version>
 		<zxing.javase.version>3.3.0</zxing.javase.version>
@@ -113,6 +114,11 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
 		</dependency>
 	</dependencies>
 </project>

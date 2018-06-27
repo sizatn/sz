@@ -20,7 +20,6 @@ public class ResponseResult implements Serializable {
 	private Object data; // 返回的数据
 
 	public ResponseResult() {
-
 	}
 
 	public ResponseResult(String code, String message, Object data) {
