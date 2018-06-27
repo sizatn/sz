@@ -1,5 +1,7 @@
 package com.sizatn.sz.utils.response;
 
+import com.sizatn.sz.common.global.Constants;
+
 /**
  * 
  * @desc response返回结果工具类
@@ -8,30 +10,24 @@ package com.sizatn.sz.utils.response;
  */
 public class ResultUtil {
 
-	private static final String SUCCESS_CODE = "666666";
-	private static final String SUCCESS_MSG = "请求成功";
-
-	private static final String ERROR_CODE = "000000";
-	private static final String ERROR_MSG = "请求失败";
-
 	public static ResponseResult success() {
-		return new ResponseResult(SUCCESS_CODE, SUCCESS_MSG);
+		return new ResponseResult(Constants.SUCCESS_CODE, Constants.SUCCESS_MSG);
 	}
 
 	public static ResponseResult success(Object data) {
-		return new ResponseResult(SUCCESS_CODE, SUCCESS_MSG, data);
+		return new ResponseResult(Constants.SUCCESS_CODE, Constants.SUCCESS_MSG, data);
 	}
-	
+
 	public static ResponseResult success(Object data, String message) {
-		return new ResponseResult(SUCCESS_CODE, message, data);
+		return new ResponseResult(Constants.SUCCESS_CODE, message, data);
 	}
 
 	public static ResponseResult error() {
-		return new ResponseResult(ERROR_CODE, ERROR_MSG);
+		return new ResponseResult(Constants.ERROR_CODE, Constants.ERROR_MSG);
 	}
 
 	public static ResponseResult error(String message) {
-		return new ResponseResult(ERROR_CODE, message);
+		return new ResponseResult(Constants.ERROR_CODE, message);
 	}
 
 }
