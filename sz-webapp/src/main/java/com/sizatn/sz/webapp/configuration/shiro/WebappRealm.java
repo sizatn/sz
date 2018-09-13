@@ -29,6 +29,9 @@ public class WebappRealm extends AuthorizingRealm {
 	@Autowired
 	private UserService userService;
 
+	/** 
+	 * 获取授权信息
+	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		Session session = SecurityUtils.getSubject().getSession();
@@ -36,6 +39,9 @@ public class WebappRealm extends AuthorizingRealm {
 		return null;
 	}
 
+	/** 
+	 * 获取身份验证
+	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String userId = (String) token.getPrincipal();
