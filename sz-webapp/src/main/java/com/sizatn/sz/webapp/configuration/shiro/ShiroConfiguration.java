@@ -11,6 +11,7 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,7 +25,7 @@ import org.springframework.context.annotation.Configuration;
 public class ShiroConfiguration {
 
 	/**
-	 * shiro 拦截器
+	 * shiro 过滤器
 	 * 
 	 * @param defaultWebSecurityManager
 	 * @return
@@ -72,6 +73,13 @@ public class ShiroConfiguration {
 		matcher.setHashIterations(2);
 		matcher.setStoredCredentialsHexEncoded(true);
 		return matcher;
+	}
+	
+	@Bean
+	public FilterRegistrationBean<AjaxAuthorizationFilter> registration(AjaxAuthorizationFilter filter) {
+		FilterRegistrationBean<AjaxAuthorizationFilter> registration = new FilterRegistrationBean<AjaxAuthorizationFilter>(filter);
+		registration.setEnabled(false);
+		return registration;
 	}
 
 }

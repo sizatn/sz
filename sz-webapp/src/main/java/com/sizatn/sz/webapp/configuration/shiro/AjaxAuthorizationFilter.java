@@ -7,8 +7,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -40,13 +38,6 @@ public class AjaxAuthorizationFilter extends FormAuthenticationFilter {
 			}
 		}
 		return false;
-	}
-
-	@Bean
-	public FilterRegistrationBean<AjaxAuthorizationFilter> registration(AjaxAuthorizationFilter filter) {
-		FilterRegistrationBean<AjaxAuthorizationFilter> registration = new FilterRegistrationBean<AjaxAuthorizationFilter>(filter);
-		registration.setEnabled(false);
-		return registration;
 	}
 
 }

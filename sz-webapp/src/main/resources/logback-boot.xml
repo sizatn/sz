@@ -9,7 +9,7 @@
 	<property name="FILE_LOG_PATTERN" value="${FILE_LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
 
 	<!-- 日志文件路径 -->
-	<property name="INSTANCEID" value="webapp" />
+	<property name="INSTANCEID" value="sz-webapp" />
 	<property name="LOG_HOME" value="/Users/ZutaoShao/Documents/logs/${INSTANCEID}" />
 
 	<!-- 开发环境 -->
@@ -185,7 +185,7 @@
 			</encoder>
 		</appender>
 		
-		<logger name="com.sizatn.ssd.dao" level="debug" />
+		<logger name="com.sizatn.sz.webapp.dao" level="debug" />
 
 		<root level="info">
 			<appender-ref ref="CONSOLE" />
