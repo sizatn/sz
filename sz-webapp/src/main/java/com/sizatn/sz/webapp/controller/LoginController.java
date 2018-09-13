@@ -17,6 +17,9 @@ import com.sizatn.sz.utils.response.ResultUtil;
 import com.sizatn.sz.webapp.entityDTO.LoginDTO;
 import com.sizatn.sz.webapp.service.LoginService;
 
+import io.swagger.annotations.Api;
+
+@Api(tags = "登录管理", description = "登录管理")
 @RestController
 @RequestMapping("/")
 public class LoginController {

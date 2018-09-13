@@ -33,7 +33,7 @@ public class User {
 	private String salt;
 
 	/**
-	 * 用户状态 0表示禁用，1表示正常
+	 * 用户状态 0表示禁用，1表示正常，2表示逻辑删除
 	 */
 	private Short status;
 

@@ -7,6 +7,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -24,9 +26,9 @@ public class AjaxAuthorizationFilter extends FormAuthenticationFilter {
 		jo.put("code", 401);
 		jo.put("message", "未授权：登录失败");
 		PrintWriter pw = null;
-		HttpServletResponse res = (HttpServletResponse) request;
+		HttpServletResponse res = (HttpServletResponse) response;
 		try {
-			res.setCharacterEncoding("UTF_8");
+			res.setCharacterEncoding("UTF-8");
 			res.setContentType("application/json;charset=utf-8");
 			pw = res.getWriter();
 		} catch (Exception e) {
@@ -38,6 +40,13 @@ public class AjaxAuthorizationFilter extends FormAuthenticationFilter {
 			}
 		}
 		return false;
+	}
+	
+	@Bean
+	public FilterRegistrationBean<AjaxAuthorizationFilter> registration(AjaxAuthorizationFilter filter) {
+		FilterRegistrationBean<AjaxAuthorizationFilter> registration = new FilterRegistrationBean<AjaxAuthorizationFilter>(filter);
+		registration.setEnabled(false);
+		return registration;
 	}
 
 }
