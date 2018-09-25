@@ -8,6 +8,12 @@ import org.springframework.context.annotation.Configuration;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
+/**
+ * 
+ * @desc druid数据源监控
+ * @author sizatn
+ * @date Sep 13, 2018
+ */
 @Configuration
 public class DruidMonitorConfig {
 
