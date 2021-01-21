@@ -14,8 +14,8 @@ import lombok.Data;
  * @author sizatn
  * @date May 5, 2018
  */
-@ApiModel("返回数据")
 @Data
+@ApiModel("返回数据")
 public class Result<T> implements Serializable {
 
 	private final static int successCode = 200;

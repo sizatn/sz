@@ -7,9 +7,8 @@ package com.sizatn.sz.common.constant;
  * @date May 5, 2018
  */
 public enum ErrorEnum {
-	/*
-	 * 错误信息
-	 */
+	
+	// 错误信息
 	E_400("400", "请求异常，请稍后再试"), 
 	E_500("500", "请求方式有误,请检查 GET/POST"), 
 	E_501("501", "请求路径不存在"), 

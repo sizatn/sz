@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 
- * @desc  字典注解
+ * @desc 字典注解
  * @author sizatn
  * @date May 5, 2018
  */
@@ -16,14 +16,14 @@ import java.lang.annotation.Target;
 public @interface Dict {
 
 	/**
-     * @desc 字典缓存code
-     * @return
-     */
-    String dictCode();
+	 * @desc 字典缓存code
+	 * @return
+	 */
+	String dictCode();
 
-    /**
-     * @desc 转换后目标字段
-     * @return
-     */
-    String target();
+	/**
+	 * @desc 转换后目标字段
+	 * @return
+	 */
+	String target();
 }
