@@ -1,6 +1,6 @@
 package com.sizatn.sz.utils.response;
 
-import com.sizatn.sz.common.global.Constants;
+import com.sizatn.sz.common.constant.Constants;
 
 /**
  * 

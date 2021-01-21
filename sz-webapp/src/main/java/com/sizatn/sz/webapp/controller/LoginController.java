@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.base.Strings;
-import com.sizatn.sz.common.global.ErrorEnum;
+import com.sizatn.sz.common.constant.ErrorEnum;
 import com.sizatn.sz.utils.response.ResponseResult;
 import com.sizatn.sz.utils.response.ResultUtil;
 import com.sizatn.sz.webapp.entityDTO.LoginDTO;

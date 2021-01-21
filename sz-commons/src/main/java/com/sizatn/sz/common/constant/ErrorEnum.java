@@ -1,4 +1,4 @@
-package com.sizatn.sz.common.global;
+package com.sizatn.sz.common.constant;
 
 /**
  * 
