@@ -1,6 +1,7 @@
 package com.sizatn.sz.utils.response;
 
 import com.sizatn.sz.common.constant.Constants;
+import com.sizatn.sz.common.model.Result;
 
 /**
  * 
@@ -10,32 +11,32 @@ import com.sizatn.sz.common.constant.Constants;
  */
 public class ResultUtil {
 
-	public static ResponseResult success() {
-		return new ResponseResult(Constants.SUCCESS_CODE, Constants.SUCCESS_MSG);
+	public static <T> Result<T> success() {
+		return new Result<T>(Constants.SC_OK_200, Constants.SUCCESS_MSG);
 	}
 
-	public static ResponseResult success(Object data) {
-		return new ResponseResult(Constants.SUCCESS_CODE, Constants.SUCCESS_MSG, data);
+	public static <T> Result<T> success(T data) {
+		return new Result<T>(Constants.SC_OK_200, Constants.SUCCESS_MSG, data);
 	}
 
-	public static ResponseResult success(Object data, String message) {
-		return new ResponseResult(Constants.SUCCESS_CODE, message, data);
+	public static <T> Result<T> success(T data, String message) {
+		return new Result<T>(Constants.SC_OK_200, message, data);
 	}
 
-	public static ResponseResult success(String message) {
-		return new ResponseResult(Constants.SUCCESS_CODE, message);
+	public static <T> Result<T> success(String message) {
+		return new Result<T>(Constants.SC_OK_200, message);
 	}
 
-	public static ResponseResult error() {
-		return new ResponseResult(Constants.ERROR_CODE, Constants.ERROR_MSG);
+	public static <T> Result<T> error() {
+		return new Result<T>(Constants.SC_INTERNAL_SERVER_ERROR_500, Constants.ERROR_MSG);
 	}
 
-	public static ResponseResult error(String message) {
-		return new ResponseResult(Constants.ERROR_CODE, message);
+	public static <T> Result<T> error(String message) {
+		return new Result<T>(Constants.SC_INTERNAL_SERVER_ERROR_500, message);
 	}
 
-	public static ResponseResult error(String code, String message) {
-		return new ResponseResult(code, message);
+	public static <T> Result<T> error(Integer code, String message) {
+		return new Result<T>(code, message);
 	}
 
 }
