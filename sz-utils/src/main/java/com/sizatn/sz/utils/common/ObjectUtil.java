@@ -5,7 +5,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,6 +21,7 @@ public class ObjectUtil extends org.apache.commons.lang3.ObjectUtils {
 
 	/**
 	 * 注解到对象复制，只复制能匹配上的方法。
+	 * 
 	 * @param annotation
 	 * @param object
 	 */
@@ -42,7 +47,7 @@ public class ObjectUtil extends org.apache.commons.lang3.ObjectUtils {
 			}
 		}
 	}
-	
+
 	/**
 	 * @param object
 	 * @return
@@ -112,5 +117,23 @@ public class ObjectUtil extends org.apache.commons.lang3.ObjectUtils {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * @return
+	 * @desc 获取类的所有属性，包括父类
+	 * @author sizatn
+	 * @date Jun 26, 2018
+	 */
+	public static Field[] getAllFields(Object object) {
+		Class<?> clazz = object.getClass();
+		List<Field> fieldList = new ArrayList<>();
+		while (clazz != null) {
+			fieldList.addAll(new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
+			clazz = clazz.getSuperclass();
+		}
+		Field[] fields = new Field[fieldList.size()];
+		fieldList.toArray(fields);
+		return fields;
 	}
 }

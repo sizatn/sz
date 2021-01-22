@@ -21,6 +21,7 @@
 		<servlet.version>2.5</servlet.version>
 		<mybatis.version>3.1.2</mybatis.version>
 		<fastjson.version>1.2.70</fastjson.version>
+		<jetcache.version>2.6.0</jetcache.version>
 	</properties>
 
 	<dependencies>
@@ -28,6 +29,22 @@
 			<groupId>com.sizatn</groupId>
 			<artifactId>sz-utils</artifactId>
 			<version>${sz.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.alicp.jetcache</groupId>
+			<artifactId>jetcache-starter-redis</artifactId>
+			<version>${jetcache.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -80,6 +97,10 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
 	</dependencies>
 </project>
