@@ -18,7 +18,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<shiro.version>1.4.0</shiro.version>
+		<shiro.version>1.7.0</shiro.version>
 		<guava.version>24.1-jre</guava.version>
 		<collections4.version>4.1</collections4.version>
 		<commons.io.version>2.6</commons.io.version>
@@ -28,14 +28,11 @@
 		<metadata.extractor.version>2.6.2</metadata.extractor.version>
 		<useragentutils.version>1.20</useragentutils.version>
 		<commons.fileupload.version>1.3.3</commons.fileupload.version>
+		<hutool.version>5.5.7</hutool.version>
+		<beanutils.version>1.9.4</beanutils.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.sizatn</groupId>
-			<artifactId>sz-commons</artifactId>
-			<version>${sz.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -112,8 +109,18 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-core</artifactId>
+			<artifactId>shiro-crypto-hash</artifactId>
 			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>${hutool.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${beanutils.version}</version>
 		</dependency>
 	</dependencies>
 </project>

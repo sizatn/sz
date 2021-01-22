@@ -1,4 +1,4 @@
-package com.sizatn.sz.utils.response;
+package com.sizatn.sz.common.util;
 
 import com.sizatn.sz.common.constant.Constants;
 import com.sizatn.sz.common.model.Result;
@@ -19,7 +19,7 @@ public class ResultUtil {
 		return new Result<T>(Constants.SC_OK_200, Constants.SUCCESS_MSG, data);
 	}
 
-	public static <T> Result<T> success(T data, String message) {
+	public static <T> Result<T> success(String message, T data) {
 		return new Result<T>(Constants.SC_OK_200, message, data);
 	}
 

@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
 @Accessors(chain = true)
 @ApiModel("文件/附件上传下载模型")
 public class Attachment implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@ApiModelProperty("文件名称")

@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.sizatn</groupId>
 		<artifactId>sz</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 
 	<artifactId>sz-webapp</artifactId>
@@ -29,12 +29,12 @@
 		<dependency>
 			<groupId>com.sizatn</groupId>
 			<artifactId>sz-utils</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${sz.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sizatn</groupId>
 			<artifactId>sz-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${sz.version}</version>
 		</dependency>
 
 		<!-- spring boot -->
