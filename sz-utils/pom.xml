@@ -18,7 +18,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<shiro.version>1.4.0</shiro.version>
+		<shiro.version>1.4.2</shiro.version>
 		<guava.version>24.1-jre</guava.version>
 		<collections4.version>4.1</collections4.version>
 		<commons.io.version>2.6</commons.io.version>
