@@ -103,11 +103,11 @@ public class CodeGenerateOneToMany extends BaseCodeGenerate implements IGenerate
 				}
 				if (subTableVo.getOriginalColumns() == null || subTableVo.getOriginalColumns().size() == 0) {
 
-					List list = DbReadTableUtil.readOriginalTableColumn(subTableVo.getTableName());
+					List<ColumnVo> list = DbReadTableUtil.readOriginalTableColumn(subTableVo.getTableName());
 					subTableVo.setOriginalColumns(list);
 				}
 				String[] localObject2 = subTableVo.getForeignKeys();
-				ArrayList<String> localArrayList = new ArrayList();
+				ArrayList<String> localArrayList = new ArrayList<String>();
 				for (String str : localObject2) {
 					localArrayList.add(DbReadTableUtil.d(str));
 				}
