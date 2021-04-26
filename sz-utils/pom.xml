@@ -21,7 +21,7 @@
 		<shiro.version>1.7.0</shiro.version>
 		<guava.version>24.1-jre</guava.version>
 		<collections4.version>4.1</collections4.version>
-		<commons.io.version>2.6</commons.io.version>
+		<commons.io.version>2.7</commons.io.version>
 		<zxing.core.version>3.3.0</zxing.core.version>
 		<zxing.javase.version>3.3.0</zxing.javase.version>
 		<servlet.api.version>2.3</servlet.api.version>
