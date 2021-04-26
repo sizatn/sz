@@ -8,9 +8,11 @@
 	<property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
 	<property name="FILE_LOG_PATTERN" value="${FILE_LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
 
-	<!-- 日志文件路径 -->
 	<property name="INSTANCEID" value="sz-webapp" />
-	<property name="LOG_HOME" value="/Users/ZutaoShao/Documents/logs/${INSTANCEID}" />
+	
+	<!-- 日志文件路径 -->
+	<property name="DEV_LOG_HOME" value="/Users/sizatn/Documents/logs/${INSTANCEID}" />
+	<property name="PRO_LOG_HOME" value="/Users/sizatn/Documents/logs/${INSTANCEID}" />
 
 	<!-- 开发环境 -->
 	<springProfile name="dev">
@@ -27,7 +29,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/debug/${INSTANCEID}-debug.log</File>
+			<File>${DEV_LOG_HOME}/debug/${INSTANCEID}-debug.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/debug/${INSTANCEID}-debug-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -45,7 +47,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/info/${INSTANCEID}-info.log</File>
+			<File>${DEV_LOG_HOME}/info/${INSTANCEID}-info.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/info/${INSTANCEID}-info-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -63,7 +65,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/warn/${INSTANCEID}-warn.log</File>
+			<File>${DEV_LOG_HOME}/warn/${INSTANCEID}-warn.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/warn/${INSTANCEID}-warn-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -81,7 +83,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/error/${INSTANCEID}-error.log</File>
+			<File>${DEV_LOG_HOME}/error/${INSTANCEID}-error.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/error/${INSTANCEID}-error-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -119,7 +121,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/debug/${INSTANCEID}-debug.log</File>
+			<File>${PRO_LOG_HOME}/debug/${INSTANCEID}-debug.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/debug/${INSTANCEID}-debug-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -137,7 +139,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/info/${INSTANCEID}-info.log</File>
+			<File>${PRO_LOG_HOME}/info/${INSTANCEID}-info.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/info/${INSTANCEID}-info-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -155,7 +157,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/warn/${INSTANCEID}-warn.log</File>
+			<File>${PRO_LOG_HOME}/warn/${INSTANCEID}-warn.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/warn/${INSTANCEID}-warn-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -173,7 +175,7 @@
 		        <onMatch>ACCEPT</onMatch>
 		        <onMismatch>DENY</onMismatch>
 		    </filter>
-			<File>${LOG_HOME}/error/${INSTANCEID}-error.log</File>
+			<File>${PRO_LOG_HOME}/error/${INSTANCEID}-error.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
                 <fileNamePattern>${LOG_HOME}/error/${INSTANCEID}-error-%d{yyyy-MM-dd}-%i.log</fileNamePattern>  
 	            <maxHistory>30</maxHistory>  
@@ -185,8 +187,6 @@
 			</encoder>
 		</appender>
 		
-		<logger name="com.sizatn.sz.webapp.dao" level="debug" />
-
 		<root level="info">
 			<appender-ref ref="CONSOLE" />
 			<appender-ref ref="DEBUG-FILE" />

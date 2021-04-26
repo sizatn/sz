@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.base.Strings;
-import com.sizatn.sz.common.model.Result;
-import com.sizatn.sz.common.util.ResultUtil;
+import com.sizatn.sz.commons.model.Result;
+import com.sizatn.sz.commons.util.ResultUtil;
 import com.sizatn.sz.webapp.entityDTO.LoginDTO;
-import com.sizatn.sz.webapp.service.LoginService;
+import com.sizatn.sz.webapp.service.ILoginService;
 
 import io.swagger.annotations.Api;
 
@@ -21,7 +21,7 @@ import io.swagger.annotations.Api;
 public class LoginController {
 
 	@Autowired
-	private LoginService loginService;
+	private ILoginService loginService;
 
 	/**
 	 * @param loginDTO

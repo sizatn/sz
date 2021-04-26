@@ -7,10 +7,10 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Service;
 
 import com.sizatn.sz.webapp.entityDTO.LoginDTO;
-import com.sizatn.sz.webapp.service.LoginService;
+import com.sizatn.sz.webapp.service.ILoginService;
 
 @Service("loginService")
-public class LoginServiceImpl implements LoginService {
+public class LoginServiceImpl implements ILoginService {
 
 	@Override
 	public String login(LoginDTO loginDTO) {

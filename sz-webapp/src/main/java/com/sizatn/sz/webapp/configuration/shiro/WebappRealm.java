@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sizatn.sz.webapp.entity.User;
-import com.sizatn.sz.webapp.service.UserService;
+import com.sizatn.sz.webapp.service.IUserService;
 
 /**
  * 
@@ -27,7 +27,7 @@ import com.sizatn.sz.webapp.service.UserService;
 public class WebappRealm extends AuthorizingRealm {
 	
 	@Autowired
-	private UserService userService;
+	private IUserService userService;
 
 	/** 
 	 * 获取授权信息

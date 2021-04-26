@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sizatn.sz.webapp.service.UserService;
+import com.sizatn.sz.webapp.service.IUserService;
 
 import io.swagger.annotations.Api;
 
@@ -15,6 +15,6 @@ import io.swagger.annotations.Api;
 public class UserController {
 	
 	@Resource(name = "userService")
-	private UserService userService;
+	private IUserService userService;
 
 }
